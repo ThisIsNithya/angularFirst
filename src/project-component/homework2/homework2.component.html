@@ -1,0 +1,25 @@
+<div class="container row">
+  <!----- Push data to array -->
+  <div class="col-sm-12">
+    <div class="form-group">
+        <label>Enter Fruits Name  : </label>
+        <input type="text" [(ngModel)] = "fruit" name="fruit">
+    </div>
+    <div class="form-group">
+      <input type="button" class="btn btn-sm btn-primary" (click) = "Submit( fruit )" name="Submit" value="Submit">
+    </div>
+
+  </div>    
+  <!----- Child Component -->
+  <div class="col-sm-12">
+    <app-homework2child1 [childData]="fruitName" (selectedFruitsChange)="handleSelectedFruits($event)"></app-homework2child1>
+  </div>
+
+  <!----- get data from  Child Component & display -->
+  <div *ngIf="selectedFruits.length > 0">
+    <h5>Selected Fruit List:</h5>
+    <ul>
+      <li *ngFor="let fruit of selectedFruits"><input type="checkbox"  [value]="fruit" > {{ fruit }}</li>
+    </ul>
+  </div>
+</div>

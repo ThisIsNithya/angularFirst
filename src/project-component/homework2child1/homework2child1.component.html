@@ -1,0 +1,8 @@
+
+<div *ngIf="fruitList.length > 0">
+    <h5>Fruit List:</h5>
+    <ul>
+      <li *ngFor="let fruit of fruitList"><input type="checkbox"  [value]="fruit" (change)="OnSelectFruits(fruit, $event)"> {{ fruit }}</li>
+    </ul>
+</div>
+

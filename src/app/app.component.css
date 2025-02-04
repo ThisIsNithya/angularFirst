@@ -1,0 +1,23 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.email-list-view {
+  display: flex;
+}
+
+app-email-list {
+  flex: 1;
+}
+
+app-email-content {
+  flex: 3;
+}
+  

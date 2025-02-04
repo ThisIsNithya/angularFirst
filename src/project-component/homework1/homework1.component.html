@@ -1,0 +1,28 @@
+<div class="container row">
+  
+<br>
+  <h3>{{ fromCurrency | uppercase }} to {{ toCurrency | uppercase }} Converter</h3> 
+  <div class="col-sm-12 form-group">
+    <div class="col-sm-6">
+        <label class="control-label">Amount</label>  
+        <input type="number" class="form-control" [(ngModel)] = "amount"/>
+    </div>
+
+    <div class="col-sm-6">
+      <label class="control-label">Exchange Rate</label>  
+      <input type="number" class="form-control" [(ngModel)] = "exchangerate" min="1" max="50"/>
+  </div>
+  </div>
+
+  <div class="col-sm-12 form-group">
+    <a href="javascript:void(0)" (click) = "Toggle(fromCurrency,toCurrency)">Change {{toCurrency}} To {{fromCurrency}}</a>
+  </div>
+ 
+   
+  <div class="col-sm-12"><hr></div>
+  <div class="col-sm-12">
+  <p><b>Original Amount:</b> {{ amount | currency:fromCurrency}}</p>
+  <p><b>Exchange Rate:</b> {{ exchangerate }}</p>
+  <p><b>Total Target Amount:</b> {{ amount | currencyexhange:exchangerate | currency:toCurrency }}</p>
+  </div>  
+</div>
